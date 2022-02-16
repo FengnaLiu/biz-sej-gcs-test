@@ -1,0 +1,80 @@
+[
+  {
+  "description": "店舗ID",
+  "type": "INTEGER",
+  "name": "store_id",
+  "mode": "REQUIRED"
+  },
+  {
+    "description": "通番",
+    "type": "STRING",
+    "name": "id",
+    "mode": "REQUIRED"
+  },
+  {
+    "description": "送信回数",
+    "type": "INTEGER",
+    "name": "send_times",
+    "mode": "REQUIRED"
+  },
+  {
+    "description": "店舗コード",
+    "type": "STRING",
+    "name": "store_cd",
+    "mode": "REQUIRED"
+  },
+  {
+    "description": "年月日時分秒",
+    "type": "TIMESTAMP",
+    "name": "created_datetime",
+    "mode": "REQUIRED"
+  },
+  {
+    "description": "商品CD",
+    "type": "STRING",
+    "name": "item_cd",
+    "mode": "REQUIRED"
+  },
+  {
+    "description": "在庫数",
+    "type": "INTEGER",
+    "name": "stock_amnt",
+    "mode": "REQUIRED"
+  },
+  {
+    "description": "取扱商品フラグ",
+    "type": "STRING",
+    "name": "item_handle_flag",
+    "mode": "REQUIRED"
+  },
+  {
+    "description": "未導入重点商品フラグ",
+    "type": "STRING",
+    "name": "non_handle_focus_item",
+    "mode": "REQUIRED"
+  },
+  {
+    "description": "処分商品フラグ",
+    "type": "STRING",
+    "name": "mark_down_flag",
+    "mode": "REQUIRED"
+  },
+  {
+    "description": "取扱区分",
+    "type": "STRING",
+    "name": "item_handle_flag_2",
+    "mode": "REQUIRED"
+  },
+  {
+    "description": "在庫引継日数",
+    "type": "INTEGER",
+    "name": "stock_date",
+    "mode": "REQUIRED"
+  },
+  {
+    "description": "更新日時",
+    "type": "TIMESTAMP",
+    "name": "processing_datetime",
+    "mode": "REQUIRED"
+  }
+]
