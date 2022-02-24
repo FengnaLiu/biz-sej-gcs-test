@@ -42,7 +42,7 @@ public class GetJsonFileContents extends DoFn<String, KV<String, String>> {
     @ProcessElement
     public void processElement(ProcessContext c) {
         String mes = c.element();
-        LOG.fine("pubsub message string: " + mes);
+        LOG.info("pubsub message string: " + mes);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
         sdf.setTimeZone(TimeZone.getTimeZone("JST"));
         sdf.setLenient(false);
@@ -60,10 +60,10 @@ public class GetJsonFileContents extends DoFn<String, KV<String, String>> {
                 return;
             }
 
-            Blob blob = storage.get(pubSubMessage.bucket, file_directory);
-            String updated = pubSubMessage.updated;
-            String value = new String(blob.getContent(), StandardCharsets.UTF_8);
-            LOG.fine("File contents:" + value);
+//            Blob blob = storage.get(pubSubMessage.bucket, file_directory);
+//            String value = new String(blob.getContent(), StandardCharsets.UTF_8);
+            String value =  new String(storage.readAllBytes(pubSubMessage.bucket, file_directory), StandardCharsets.UTF_8);
+            LOG.info(String.format("File contents:%s, file(%s)",value, file_directory));
             c.output(KV.of(file_directory, value));
             long endDateSec = new Date().getTime();
             LOG.fine(String.format("Read file contents for file(%s), whole:%d seconds, start:%d, end:%d", file_directory, (endDateSec - startDateSec) / 1000, startDateSec, endDateSec));
