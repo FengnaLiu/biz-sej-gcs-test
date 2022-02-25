@@ -28,7 +28,7 @@ public class ParseFileDirectory {
         this.send_times = file_name_parts[file_name_parts.length-1].replace(".json","");
         this.created_datetime = file_name_parts[file_name_parts.length-2];
         this.store_cd = file_name_parts[file_name_parts.length - 3];
-        LOG.info(String.format("%s,%s,%s", send_times, store_cd, created_datetime));
+        LOG.fine(String.format("%s,%s,%s", send_times, store_cd, created_datetime));
     }
 
     /**
